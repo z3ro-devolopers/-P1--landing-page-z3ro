@@ -83,7 +83,7 @@
   });
 
   /* ── Cursor sparkle trail ──────────────────────────────── */
-  const COLORS = ['#00ff88', '#00e5ff', '#ffffff'];
+  const COLORS = ['#ffffff', '#aaaaaa', '#666666'];
   const SPARKLE_THROTTLE_MS = 40;
   const SPARKLE_MAX = 20;
 

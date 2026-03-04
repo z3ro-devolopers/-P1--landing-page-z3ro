@@ -3,7 +3,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #0a0a0f;
+  background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,29 +21,29 @@
 .loader-logo {
   font-size: 3rem;
   font-weight: 700;
-  color: #00ff88;
+  color: #fff;
   letter-spacing: .1em;
   margin-bottom: .4rem;
   animation: loader-pulse 1.4s ease-in-out infinite;
 }
 
-.loader-logo span { color: #00e5ff; }
+.loader-logo span { color: #666; }
 
 @keyframes loader-pulse {
-  0%, 100% { text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; }
-  50%       { text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88, 0 0 60px #00e5ff; }
+  0%, 100% { text-shadow: 0 0 8px rgba(255,255,255,.4); }
+  50%       { text-shadow: 0 0 20px rgba(255,255,255,.9), 0 0 40px rgba(255,255,255,.3); }
 }
 
 .loader-terminal {
   width: min(500px, 90vw);
-  border: 1px solid rgba(0,255,136,.3);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 1.8rem;
 }
 
 .loader-terminal-top {
-  background: #1a1a2e;
+  background: #0d0d0d;
   padding: .45rem 1rem;
   display: flex;
   gap: .45rem;
@@ -60,7 +60,7 @@
 
 .loader-terminal-title {
   font-size: .65rem;
-  color: #555;
+  color: #444;
   margin-left: auto;
 }
 
@@ -69,19 +69,20 @@
   font-size: .8rem;
   line-height: 2;
   min-height: 130px;
-  color: #8899aa;
+  color: #666;
+  background: #050505;
 }
 
 .loader-line { display: block; }
-.loader-line .t-prompt { color: #00ff88; }
-.loader-line .t-ok     { color: #28c840; }
-.loader-line .t-warn   { color: #febc2e; }
+.loader-line .t-prompt { color: #e8e8e8; }
+.loader-line .t-ok     { color: #aaa; }
+.loader-line .t-warn   { color: #888; }
 
 .loader-cursor-blink {
   display: inline-block;
   width: .6ch;
   height: 1em;
-  background: #00ff88;
+  background: #e8e8e8;
   vertical-align: text-bottom;
   margin-left: 2px;
   animation: blink-loader .9s step-end infinite;
@@ -96,7 +97,7 @@
 
 .loader-progress-label {
   font-size: .7rem;
-  color: rgba(0,255,136,.6);
+  color: rgba(255,255,255,.35);
   letter-spacing: .2em;
   margin-bottom: .4rem;
   display: flex;
@@ -105,8 +106,8 @@
 
 .loader-progress-bg {
   width: 100%;
-  height: 3px;
-  background: rgba(255,255,255,.07);
+  height: 2px;
+  background: rgba(255,255,255,.06);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -114,7 +115,7 @@
 .loader-progress-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #00ff88, #00e5ff);
+  background: #fff;
   border-radius: 2px;
   transition: width .3s ease;
 }
