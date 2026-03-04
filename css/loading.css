@@ -1,0 +1,121 @@
+/* ── Loading Screen ────────────────────────────────────────── */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-logo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .1em;
+  margin-bottom: .4rem;
+  animation: loader-pulse 1.4s ease-in-out infinite;
+}
+
+.loader-logo span { color: #666; }
+
+@keyframes loader-pulse {
+  0%, 100% { text-shadow: 0 0 8px rgba(255,255,255,.4); }
+  50%       { text-shadow: 0 0 20px rgba(255,255,255,.9), 0 0 40px rgba(255,255,255,.3); }
+}
+
+.loader-terminal {
+  width: min(500px, 90vw);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1.8rem;
+}
+
+.loader-terminal-top {
+  background: #0d0d0d;
+  padding: .45rem 1rem;
+  display: flex;
+  gap: .45rem;
+  align-items: center;
+}
+
+.loader-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.loader-dot-red    { background: #ff5f57; }
+.loader-dot-yellow { background: #febc2e; }
+.loader-dot-green  { background: #28c840; }
+
+.loader-terminal-title {
+  font-size: .65rem;
+  color: #444;
+  margin-left: auto;
+}
+
+.loader-terminal-body {
+  padding: 1rem 1.2rem;
+  font-size: .8rem;
+  line-height: 2;
+  min-height: 130px;
+  color: #666;
+  background: #050505;
+}
+
+.loader-line { display: block; }
+.loader-line .t-prompt { color: #e8e8e8; }
+.loader-line .t-ok     { color: #aaa; }
+.loader-line .t-warn   { color: #888; }
+
+.loader-cursor-blink {
+  display: inline-block;
+  width: .6ch;
+  height: 1em;
+  background: #e8e8e8;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink-loader .9s step-end infinite;
+}
+
+@keyframes blink-loader { 50% { opacity: 0; } }
+
+/* Progress bar */
+.loader-progress-wrap {
+  width: min(500px, 90vw);
+}
+
+.loader-progress-label {
+  font-size: .7rem;
+  color: rgba(255,255,255,.35);
+  letter-spacing: .2em;
+  margin-bottom: .4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loader-progress-bg {
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  border-radius: 2px;
+  transition: width .3s ease;
+}
